@@ -18,11 +18,15 @@ class App extends Component {
     }
   }
   
+  onInputChange = (e, type) => {
+    console.log(e.target.value, type);
+  }
+  
   render() {
     return (
       <React.Fragment>
         <Nav />
-        <UserForm />
+        <UserForm onInputChange={this.onInputChange} />
       </React.Fragment>
     )
   }
