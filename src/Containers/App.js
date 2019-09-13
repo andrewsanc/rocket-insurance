@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import Nav from '../Components/Nav';
 
 class App extends Component {
   
   render() {
     return (
-      <div>
-        <h4>Hello World!</h4>
-      </div>
+      <React.Fragment>
+        <Nav />
+      </React.Fragment>
     )
   }
 }
