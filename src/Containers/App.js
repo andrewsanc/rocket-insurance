@@ -8,18 +8,16 @@ class App extends Component {
     this.state = {
       firstName: '',
       lastName: '',
-      address: {
-        line_1: '',
-        line_2: null,
-        city: '',
-        region: '',
-        postal: ''
-      }
+      line_1: '',
+      line_2: null,
+      city: '',
+      region: '',
+      postal: ''
     }
   }
   
-  onInputChange = (e, type) => {
-    console.log(e.target.value, type);
+  onInputChange = (e, key) => {
+    this.setState({ [key]: e.target.value })
   }
   
   render() {

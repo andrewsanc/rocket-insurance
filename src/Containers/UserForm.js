@@ -17,27 +17,27 @@ const UserForm = ({ onInputChange }) => {
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <input id="line_1" type="text" onChange={(e) => onInputChange(e, 'address')} />
+          <input id="line_1" type="text" onChange={(e) => onInputChange(e, 'line_1')} />
           <label htmlFor="line_1">Address 1</label>
         </div>
       </div>
       <div className="row">
         <div className="input-field col s12">
-          <input placeholder="Optional" id="line_2" type="text" onChange={(e) => onInputChange(e, 'address')} />
+          <input placeholder="Optional" id="line_2" type="text" onChange={(e) => onInputChange(e, 'line_2')} />
           <label htmlFor="line_2">Address 2</label>
         </div>
       </div>
       <div className="row">
         <div className="input-field col s4">
-          <input id="city" type="text" onChange={(e) => onInputChange(e, 'address')} />
+          <input id="city" type="text" onChange={(e) => onInputChange(e, 'city')} />
           <label htmlFor="city">City</label>
         </div>
         <div className="input-field col s4">
-          <input id="region" type="text" onChange={(e) => onInputChange(e, 'address')} />
+          <input id="region" type="text" onChange={(e) => onInputChange(e, 'region')} />
           <label htmlFor="region">Region</label>
         </div>
         <div className="input-field col s4">
-          <input id="postal" type="text" onChange={(e) => onInputChange(e, 'address')} />
+          <input id="postal" type="text" onChange={(e) => onInputChange(e, 'postal')} />
           <label htmlFor="postal">Postal Code</label>
         </div>
       </div>
