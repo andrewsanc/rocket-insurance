@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../Components/Nav';
-import UserForm from './UserForm';
+import UserForm from '../Components/UserForm';
 import QuoteOverview from './QuoteOverview';
 
 class App extends Component {
@@ -17,6 +17,10 @@ class App extends Component {
       data: false,
       responseQuote: null
     }
+  }
+
+  onResetButtonClick = () => {
+    this.setState({ data: false })
   }
   
   onInputChange = (e, key) => {
@@ -60,6 +64,7 @@ class App extends Component {
             asteroidCollision={this.state.responseQuote.variable_options.asteroid_collision}
             variableSelections={this.state.responseQuote.variable_selections}
             premium={this.state.responseQuote.premium}
+            onResetButtonClick={this.onResetButtonClick}
           />
           :
           <UserForm 

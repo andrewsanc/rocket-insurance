@@ -15,7 +15,7 @@ class QuoteOverview extends Component {
   }
 
   render() {
-    const { policyHolder, deductible, asteroidCollision } = this.props;
+    const { policyHolder, deductible, asteroidCollision, onResetButtonClick } = this.props;
     return (
       <div className="container">
         <h5>Quote Overview for {policyHolder.first_name} {policyHolder.last_name}</h5>
@@ -41,10 +41,11 @@ class QuoteOverview extends Component {
         </div>
         <div className="row">
           <div className="col s12">
-            <h6>Overview of Policy Selection</h6>
+            <h6>Total of Policy Selection</h6>
             <p>Deductible Total: ${this.state.deductibleTotal}</p>
             <p>Asteroid Colloision Coverage: ${this.state.asteroidTotal}</p>
             <p>Premium Total: ${this.state.premiumTotal}</p>
+            <button onClick={() => onResetButtonClick()} className="btn waves-effect waves-light">Reset</button>
           </div>
         </div>
       </div>
