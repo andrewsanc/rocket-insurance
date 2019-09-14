@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Components/Nav';
 import UserForm from './UserForm';
-import QuoteOverview from '../Components/QuoteOverview';
+import QuoteOverview from './QuoteOverview';
 
 const dummyData = {
   quoteId: 'UP5681999',
