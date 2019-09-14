@@ -10,7 +10,7 @@ class QuoteOverview extends Component {
     }
   }
 
-  onRadioClick = (value, key) => {
+  onRadioClick = (value, key) => {  // Sets the state from the radio inputs
     this.setState({ [key]: value })
   }
 

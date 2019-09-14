@@ -23,12 +23,12 @@ class App extends Component {
     this.setState({ data: false })
   }
   
-  onInputChange = (e, key) => {
+  onInputChange = (e, key) => { // Handles the input change from our form
     this.setState({ [key]: e.target.value })
   }
 
-  onButtonClick = () => {
-    const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+  onButtonClick = () => { // Makes request to backend server
+    const proxyurl = 'https://cors-anywhere.herokuapp.com/';  // Had to proxy the request dur CORS backend
     const url = 'https://fed-challenge.sure.now.sh/api/v1/quotes';
     fetch(proxyurl + url, {
       method: 'post',
@@ -52,7 +52,7 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
-  validateForm = () => {
+  validateForm = () => {  // Controller function to handle form validation
     const { line_1, city, region, postal } = this.state;
     if (this.validateAddress(line_1) && this.validateCity(city) && this.validateRegion(region) && this.validatePostal(postal)) {
       return true;
@@ -73,7 +73,7 @@ class App extends Component {
       <React.Fragment>
         <Nav />
         {
-         this.state.data ? 
+         this.state.data ? // Ternary statement that renders depending on if the user has completed the form and submitted it
           <QuoteOverview 
             policyHolder={this.state.responseQuote.policy_holder} 
             deductible={this.state.responseQuote.variable_options.deductible}
