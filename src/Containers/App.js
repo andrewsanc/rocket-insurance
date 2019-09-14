@@ -19,12 +19,16 @@ class App extends Component {
   onInputChange = (e, key) => {
     this.setState({ [key]: e.target.value })
   }
+
+  onButtonClick = () => {
+    console.log('form submitted!')
+  }
   
   render() {
     return (
       <React.Fragment>
         <Nav />
-        <UserForm onInputChange={this.onInputChange} />
+        <UserForm onInputChange={this.onInputChange} onButtonClick={this.onButtonClick} />
       </React.Fragment>
     )
   }

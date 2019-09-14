@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserForm = ({ onInputChange }) => {
+const UserForm = ({ onInputChange, onButtonClick }) => {
 
   return (
     <div className="container">
@@ -41,6 +41,9 @@ const UserForm = ({ onInputChange }) => {
           <label htmlFor="postal">Postal Code</label>
         </div>
       </div>
+      <button className="right btn waves-effect waves-light" onClick={() => onButtonClick()} >
+        Submit
+      </button>
     </div>
   );
 }
