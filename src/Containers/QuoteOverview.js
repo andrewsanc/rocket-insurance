@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 class QuoteOverview extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      premiumTotal: this.props.premium,
+      asteroidTotal: this.props.variableSelections.asteroid_collision,
+      deductibleTotal: this.props.variableSelections.deductible
+    }
   }
 
   render() {
@@ -28,6 +33,14 @@ class QuoteOverview extends Component {
                 <p><label><input key={i} name="collision" type="radio" /><span>${value}</span></label></p>
               )
             })}
+          </div>
+        </div>
+        <div className="row">
+          <div className="col s12">
+            <h6>Overview of Policy Selection</h6>
+            <p>Deductible Total: ${this.state.deductibleTotal}</p>
+            <p>Asteroid Colloision Coverage: ${this.state.asteroidTotal}</p>
+            <p>Premium Total: ${this.state.premiumTotal}</p>
           </div>
         </div>
       </div>

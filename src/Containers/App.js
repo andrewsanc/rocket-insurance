@@ -100,6 +100,8 @@ class App extends Component {
           policyHolder={this.state.responseQuote.policy_holder} 
           deductible={this.state.responseQuote.variable_options.deductible}
           asteroidCollision={this.state.responseQuote.variable_options.asteroid_collision}
+          variableSelections={this.state.responseQuote.variable_selections}
+          premium={this.state.responseQuote.premium}
         />
       </React.Fragment>
     )
