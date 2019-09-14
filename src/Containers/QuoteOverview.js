@@ -6,8 +6,12 @@ class QuoteOverview extends Component {
     this.state = {
       premiumTotal: this.props.premium,
       asteroidTotal: this.props.variableSelections.asteroid_collision,
-      deductibleTotal: this.props.variableSelections.deductible
+      deductibleTotal: this.props.variableSelections.deductible,
     }
+  }
+
+  onRadioClick = (value, key) => {
+    this.setState({ [key]: value })
   }
 
   render() {
@@ -21,7 +25,7 @@ class QuoteOverview extends Component {
             <p>{deductible.description}</p>
             {deductible.values.map((value, i) => {
               return (
-                <p><label><input key={i} name="deductible" type="radio" /><span>${value}</span></label></p>
+                <p><label><input onClick={() => this.onRadioClick(value, 'deductibleTotal')} key={i} name="deductible" type="radio" /><span>${value}</span></label></p>
               )
             })}
           </div>
@@ -30,7 +34,7 @@ class QuoteOverview extends Component {
             <p>{asteroidCollision.description}</p>
             {asteroidCollision.values.map((value, i) => {
               return (
-                <p><label><input key={i} name="collision" type="radio" /><span>${value}</span></label></p>
+                <p><label><input onClick={() => this.onRadioClick(value, 'asteroidTotal')} key={i} name="collision" type="radio" /><span>${value}</span></label></p>
               )
             })}
           </div>
