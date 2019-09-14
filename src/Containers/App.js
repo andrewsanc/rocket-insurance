@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Components/Nav';
 import UserForm from './UserForm';
+import QuoteOverview from '../Components/QuoteOverview';
 
 class App extends Component {
   constructor(props) {
@@ -51,7 +52,8 @@ class App extends Component {
     return (
       <React.Fragment>
         <Nav />
-        <UserForm onInputChange={this.onInputChange} onButtonClick={this.onButtonClick} />
+        {/* <UserForm onInputChange={this.onInputChange} onButtonClick={this.onButtonClick} /> */}
+        <QuoteOverview />
       </React.Fragment>
     )
   }
