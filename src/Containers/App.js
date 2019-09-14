@@ -68,7 +68,7 @@ class App extends Component {
   
   render() {
     const enableSubmit = this.validateForm();
-    console.log(enableSubmit)
+    
     return (
       <React.Fragment>
         <Nav />
