@@ -3,6 +3,49 @@ import Nav from '../Components/Nav';
 import UserForm from './UserForm';
 import QuoteOverview from '../Components/QuoteOverview';
 
+const dummyData = {
+  quoteId: 'UP5681999',
+  rating_address: {
+    line_1: '124 Conch Street',
+    line_2: '',
+    city: 'Bikini Bottom',
+    region: 'Ocean',
+    postal: '11211'
+  },
+  policy_holder: {
+    first_name: 'Spongebob',
+    last_name: 'Squarepants'
+  },
+  variable_options: {
+    deductible: {
+      title: 'Deductible',
+      description: 'The amount of money you will pay in an insurance claim before the insurance coverage kicks in.',
+      values: [
+        500,
+        1000,
+        2000
+      ],
+      'default': 500
+    },
+    asteroid_collision: {
+      title: 'Asteroid Collision Limit',
+      description: 'The maximum amount covered for damages caused by asteroid collisions.',
+      values: [
+        100000,
+        300000,
+        500000,
+        1000000
+      ],
+      'default': 100000
+    }
+  },
+  variable_selections: {
+    deductible: 500,
+    asteroid_collision: 100000
+  },
+  premium: 6000
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +57,7 @@ class App extends Component {
       city: '',
       region: '',
       postal: '',
-      responseQuote: null
+      responseQuote: dummyData
     }
   }
   
@@ -53,7 +96,11 @@ class App extends Component {
       <React.Fragment>
         <Nav />
         {/* <UserForm onInputChange={this.onInputChange} onButtonClick={this.onButtonClick} /> */}
-        <QuoteOverview />
+        <QuoteOverview 
+          policyHolder={this.state.responseQuote.policy_holder} 
+          deductible={this.state.responseQuote.variable_options.deductible}
+          asteroidCollision={this.state.responseQuote.variable_options.asteroid_collision}
+        />
       </React.Fragment>
     )
   }
