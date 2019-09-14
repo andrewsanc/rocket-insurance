@@ -12,7 +12,8 @@ class App extends Component {
       line_2: null,
       city: '',
       region: '',
-      postal: ''
+      postal: '',
+      responseQuote: null
     }
   }
   
@@ -42,7 +43,7 @@ class App extends Component {
       })
     })
       .then(response => response.json())
-      .then(response => console.log(response))
+      .then(response => this.setState({ responseQuote: response.quote }))
       .catch(error => console.log(error))
   }
   
