@@ -51,8 +51,24 @@ class App extends Component {
       .then(response => this.setState({ data: true, responseQuote: response.quote }))
       .catch(error => console.log(error))
   }
+
+  validateForm = () => {
+    const { line_1, city, region, postal } = this.state;
+    if (this.validateAddress(line_1) && this.validateCity(city) && this.validateRegion(region) && this.validatePostal(postal)) {
+      return true;
+    }
+    return false;
+  }
+
+  validateAddress = (address) => address.trim().length > 2;
+  validateCity = (city) => city.trim().length > 2;
+  validateRegion = (region) => region.trim().length >= 2;
+  validatePostal = (postal) => postal.trim().length >= 5;
+
   
   render() {
+    const enableSubmit = this.validateForm();
+    console.log(enableSubmit)
     return (
       <React.Fragment>
         <Nav />
@@ -69,7 +85,8 @@ class App extends Component {
           :
           <UserForm 
             onInputChange={this.onInputChange} 
-            onButtonClick={this.onButtonClick} 
+            onButtonClick={this.onButtonClick}
+            enableSubmit={enableSubmit} 
           />
         }
       </React.Fragment>

@@ -1,10 +1,9 @@
 import React from 'react';
 
-const UserForm = ({ onInputChange, onButtonClick }) => {
-
+const UserForm = ({ onInputChange, onButtonClick, enableSubmit }) => {
   return (
     <div className="container">
-      <h5>Rating Information</h5>
+      <h5>Customer Information</h5>
       <div className="row">
         <div className="input-field col s6">
           <input id="firstName" type="text" onChange={(e) => onInputChange(e, 'firstName')} />
@@ -41,7 +40,7 @@ const UserForm = ({ onInputChange, onButtonClick }) => {
           <label htmlFor="postal">Postal Code</label>
         </div>
       </div>
-      <button className="right btn waves-effect waves-light" onClick={() => onButtonClick()} >
+      <button disabled={!enableSubmit} className="right btn waves-effect waves-light" onClick={() => onButtonClick()} >
         Submit
       </button>
     </div>
